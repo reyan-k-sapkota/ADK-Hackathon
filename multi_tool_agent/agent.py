@@ -1,4 +1,5 @@
 from google.adk.agents import Agent
+from . import prompt
 
 
 def get_pdfs(country: str) -> str:
@@ -17,11 +18,7 @@ root_agent = Agent(
     name="engineering_code_consultant",
     model="gemini-2.0-flash",
     description="Provides region-specific consultation based on national civil engineering codes.",
-    instruction=(
-        "You are an engineering consultant AI that answers structural or civil engineering questions "
-        "using national codes of practice. Use the `get_pdf_url_for_country` tool to retrieve the link of the relevant codes"
-        "from the code document and cite page numbers when giving your answer."
-    ),
+    instruction=prompt.CODE_COMPLIANCE_CONSULTANT_AGENT,
     tools=[get_pdfs],
 )
 
