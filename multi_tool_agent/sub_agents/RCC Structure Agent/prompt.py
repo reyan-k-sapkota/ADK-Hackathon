@@ -1,4 +1,4 @@
-"""RCC Structure Consultant Agent"""
+"""RCC Structure Consultant Agent Prompt"""
 
 RCC_STRUCTURE_AGENT_PROMPT = """
 
