@@ -2,12 +2,31 @@ from google.adk import Agent
 from . import prompt
 import sys
 from pathlib import Path
+from vertexai import rag
 
-current_file_path = Path(__file__).resolve()
-current_agent_dir = current_file_path.parent
-sub_agents_dir = current_agent_dir.parent
-sys.path.insert(0, str(sub_agents_dir))
-from shared_tools import rag_response
+def rag_response(query:str) -> str:
+    """
+    Retrieves contextually relevant information from a RAG corpus.
+
+    Args:
+        query (str): The query string to search within the corpus.
+
+    Returns:
+        vertexai.rag.RagRetrievalQueryResponse: The response containing retrieved
+        information from the corpus.
+    """
+    corpus_name = "projects/engineer-code-consultant/locations/us-east4/ragCorpora/6917529027641081856"
+
+    response = rag.retrieval_query(
+            rag_resources=[
+                rag.RagResource(
+                    rag_corpus=corpus_name,
+                    )
+                ],
+            text=query,
+            )
+
+    return str(response)
 
 MODEL = "gemini-2.0-flash"
 
