@@ -9,7 +9,7 @@ from .sub_agents.Steel_Structure_Agent.agent import root_agent as steel_structur
 
 root_agent = Agent(
     name="engineering_code_consultant",
-    model="gemini-2.0-flash",
+    model="gemini-2.5-flash",
     description="Provides region-specific consultation based on national civil engineering codes.",
     instruction=prompt.CODE_COMPLIANCE_CONSULTANT_AGENT_PROMPT,
     tools=[AgentTool(agent=building_bylaws_sub_agent),

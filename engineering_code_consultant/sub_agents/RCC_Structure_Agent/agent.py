@@ -28,7 +28,7 @@ def rag_response(query:str) -> str:
 
     return str(response)
 
-MODEL = "gemini-2.0-flash"
+MODEL = "gemini-2.5-flash"
 
 root_agent = Agent(
         model=MODEL,
