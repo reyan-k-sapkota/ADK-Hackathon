@@ -1,17 +1,16 @@
 import os
 import vertexai
 from vertexai import agent_engines
-from beaver_assist_agent.agent import root_agent
+from engineering_code_consultant.agent import root_agent
 from vertexai.preview import reasoning_engines
+from dotenv import load_dotenv
 
-PROJECT_ID = os.getenv(PROJECT_ID)
-LOCATION = os.getenv(LOCATION)
-STAGING_BUCKET = os.getenv(STAGING_BUCKET)
+load_dotenv()
 
 vertexai.init(
-        project=PROJECT_ID,
-        location=LOCATION,
-        staging_bucket=STAGING_BUCKET,
+        project=os.getenv("GOOGLE_CLOUD_PROJECT"),
+        location=os.getenv("GOOGLE_CLOUD_LOCATION"),
+        staging_bucket=os.getenv("GOOGLE_CLOUD_STAGING_BUCKET"),
     )
 
 app = reasoning_engines.AdkApp(
@@ -20,14 +19,14 @@ app = reasoning_engines.AdkApp(
         )
 
 remote_agent = agent_engines.create(
-        app,
+        agent_engine=app,
         requirements=[
             'google-cloud-aiplatform[agent_engines,adk]',
          ],
         display_name="Beaver Assist Agent",
         description="An ADK agent that specializes in structural engineering codes for India and Nepal",
         extra_packages=[
-            "./beaver_assist_agent",
+            "./engineering_code_consultant",
         ]
     )
 
