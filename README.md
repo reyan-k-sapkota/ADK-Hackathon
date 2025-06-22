@@ -7,7 +7,7 @@ This repository contains code for creating, deploying, and interacting with a Re
 - Steel Structure Agent
 
 ## ⭐ Demo
-[![Watch the demo](https://i.imgur.com/VdAD3A7.png)](https://youtu.be/LrrOuAI7z1Y)
+[![Watch the demo](assets/thumbnail.jpg)](https://youtu.be/LrrOuAI7z1Y)
 
 ## 🚀 Quickstart
 To get started, set up a Google Cloud Project with a custom RAG Corpus, and enter the environment variables in .env.example. Then, install the required dependencies using pip:
