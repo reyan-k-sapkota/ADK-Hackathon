@@ -1,4 +1,4 @@
-## Introduction
+## 🧭 Introduction
 
 This repository contains code for creating, deploying, and interacting with a Retrieval-Augmented-Generation (RAG) based AI agent created for the 2025 Google ADK Hackathon. The agent specializes in providing consultation for region-specific structural engineering guidelines for India and Nepal. To do this, it utilizes a RAG Corpus created using relevant Indian and Nepalese engineering guideline documents alongisde with four specialized sub-agents that query this RAG Corpus and formulate a response. The specialized sub-agents are as follows:
 - Building ByLaws Agent
@@ -6,7 +6,10 @@ This repository contains code for creating, deploying, and interacting with a Re
 - Concrete Mix Design Agent
 - Steel Structure Agent
 
-## Quickstart
+## ⭐ Demo
+![Demo Video](https://youtu.be/LrrOuAI7z1Y)
+
+## 🚀 Quickstart
 To get started, set up a Google Cloud Project with a custom RAG Corpus, and enter the environment variables in .env.example. Then, install the required dependencies using pip:
 ```
 pip install -r requirements.txt
@@ -24,10 +27,10 @@ After successful deployment, fill in the rest of the required environment variab
 python3 run.py
 ```
 
-## Architecture Diagram
+## 🏗️ Architecture Diagram
 ![Architecture Diagram](assets/architecture_diagram.jpg)
 
-## Hackathon Judging
+## 🧑‍⚖️ Hackathon Judging
 For a limited time, a fully deployed AI agent is available on Vertex AI for judging purposes. The agent link on the submission form should lead to a webpage indicating the following error: ![Error Page](assets/error_page.jpg)
 
 This is by design and is intended to limit public access. To request access to the deployed model, forward the error message to rajwolchapagain@gmail.com. 
